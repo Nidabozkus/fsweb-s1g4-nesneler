@@ -206,10 +206,14 @@ console.log(SonDegerlendirmeyiAl());
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
-  /* Kodlar buraya */
+function PuanaGoreDegerlendirmeAl(degerlendirmelerDizisi, puan) {
+  for (i = 0; i < degerlendirmeler.length; i++) {
+    if (degerlendirmeler[i].puan < 4) {
+      return degerlendirmeler;
+    }
+  }
 }
-
+console.log(PuanaGoreDegerlendirmeAl());
 /*  BONUS 2:    
 	UzunDegerlendirmeleriAl fonksiyonuna aşağıdakileri uygulayın:
 	1. Tüm değerlendirmeleri içeren diziyi alacak
