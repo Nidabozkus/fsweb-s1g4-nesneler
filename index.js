@@ -145,7 +145,7 @@ function DegerlendirmeEkle(DeğerlendirmelerDizisi, isim, puan, geribildirim) {
   degerlendirmeler.push(degerlendirme);
   return degerlendirme;
 }
-DegerlendirmeEkle(degerlendirmeler, "hurşut", 2, "Boktan yemekler!");
+//DegerlendirmeEkle(degerlendirmeler, "hurşut", 2, "Boktan yemekler!");
 //console.log(degerlendirmeler);
 /*  Görev 6: 
 	Dizideki değerlendirmelerin anahtarına(key,index) bağlı olarak bir değerlendirme döndüren bir fonksiyon yazın
@@ -166,9 +166,7 @@ function AnahtardanDegerlendirmeAl(degerlendirmelerDizisi, i) {
     degerlendirmeler[i].geribildirim;
   return a;
 }
-
-console.log(degerlendirmeler, 2);
-
+console.log(AnahtardanDegerlendirmeAl(degerlendirmeler, 2));
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
 	
@@ -181,9 +179,16 @@ console.log(degerlendirmeler, 2);
 	Not: Eğer 4. görevi başarıyla yaptıysanız kişinin geribildirimi boş görünmemeli
 */
 
-function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
-  /*Kodlar buraya*/
+function SonDegerlendirmeyiAl(degerlendirmelerDizisi) {
+  let b =
+    degerlendirmeler[degerlendirmeler.length - 1].isim +
+    " isimli kişi " +
+    degerlendirmeler[degerlendirmeler.length - 1].puan +
+    " puan verdi ve şunları yazdı: " +
+    degerlendirmeler[degerlendirmeler.length - 1].geribildirim;
+  return b;
 }
+console.log(SonDegerlendirmeyiAl());
 
 /////////////// BONUS  GÖRVLER////////////////////
 
