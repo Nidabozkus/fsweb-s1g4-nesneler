@@ -137,10 +137,16 @@ console.log(degerlendirmeler);
 	4. Güncellenmiş diziyi döndürecek
 */
 
-function DegerlendirmeEkle(/*Kodlar buraya */) {
-  /*Kodlar buraya */
+function DegerlendirmeEkle(DeğerlendirmelerDizisi, isim, puan, geribildirim) {
+  let degerlendirme = {};
+  degerlendirme.isim = isim;
+  degerlendirme.puan = puan;
+  degerlendirme.geribildirim = geribildirim;
+  degerlendirmeler.push(degerlendirme);
+  return degerlendirme;
 }
-
+DegerlendirmeEkle(degerlendirmeler, "hurşut", 2, "Boktan yemekler!");
+//console.log(degerlendirmeler);
 /*  Görev 6: 
 	Dizideki değerlendirmelerin anahtarına(key,index) bağlı olarak bir değerlendirme döndüren bir fonksiyon yazın
 	
@@ -151,9 +157,17 @@ function DegerlendirmeEkle(/*Kodlar buraya */) {
 	Örnek: AnahtardanDegerlendirmeAl(degerlendirmeler,0) şunu döndürmeli: "Nalan isimli kişi 5 puan verdi ve şunları yazdı: Mükemmel atmosfer ve mükemmel vegan seçenekleri!"
 */
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
-  /*Kodlar buraya*/
+function AnahtardanDegerlendirmeAl(degerlendirmelerDizisi, i) {
+  let a =
+    degerlendirmeler[i].isim +
+    " isimli kişi " +
+    degerlendirmeler[i].puan +
+    " puan verdi ve şunları yazdı: " +
+    degerlendirmeler[i].geribildirim;
+  return a;
 }
+
+console.log(degerlendirmeler, 2);
 
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
