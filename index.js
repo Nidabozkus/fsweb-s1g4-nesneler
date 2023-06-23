@@ -55,6 +55,18 @@ const burger = {
   kategori: "Öğle Yemeği",
 };
 
+burger.indirim = function (kisi) {
+  if ((kisi = "ögretmen")) {
+    return burger.fiyat - burger.fiyat * 0.25;
+  } else if ((kisi = "öğrenci")) {
+    return burger.fiyat - burger.fiyat * 0.4;
+  } else if ((kisi = "diğer")) {
+    return burger.fiyat - burger.fiyat * 0.1;
+  }
+};
+//console.log(burger.indirim("öğretmen"));
+console.log(burger.indirim("diğer"));
+
 ///////////////Değerlendirmeler (MVP)///////////////////
 const degerlendirmeler = [
   {
@@ -104,8 +116,8 @@ const degerlendirmeler = [
 	Yukarıdaki degerlendirmeler dizisini(array) kullanarak:
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
-
-/*  Görev 4 (ototest yok):  
+console.log(degerlendirmeler[5].geribildirim);
+/*  Görev 4 (ototest yok): 
 	Reyna'nın geribildirimi girilmemiş! Aşağıdakileri uygulayın: (fonksiyona gerek yok) 
 	1. Bu geribildirimi Reyna'nın değerlendirmesine ekleyin - "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım"
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
