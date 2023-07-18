@@ -53,19 +53,20 @@ const burger = {
   isim: "Burger",
   fiyat: 18,
   kategori: "Öğle Yemeği",
+  indirim: function (kisi) {
+    if (kisi === "ögretmen") {
+      return burger.fiyat * 0.75;
+    } else if (kisi === "öğrenci") {
+      return burger.fiyat * 0.75;
+    } else if (kisi === "diğer") {
+      return burger.fiyat * 0.9;
+    }
+  },
 };
 
-burger.indirim = function (kisi) {
-  if ((kisi = "ögretmen")) {
-    return burger.fiyat - burger.fiyat * 0.25;
-  } else if ((kisi = "öğrenci")) {
-    return burger.fiyat - burger.fiyat * 0.4;
-  } else if ((kisi = "diğer")) {
-    return burger.fiyat - burger.fiyat * 0.1;
-  }
-};
-//console.log(burger.indirim("öğretmen"));
-console.log(burger.indirim("diğer"));
+//console.log(burger.indirim("diğer"));
+console.log(burger.indirim("ögretmen"));
+//console.log(burger.indirim("öğrenci"));
 
 ///////////////Değerlendirmeler (MVP)///////////////////
 const degerlendirmeler = [
@@ -137,14 +138,17 @@ console.log(degerlendirmeler);
 	4. Güncellenmiş diziyi döndürecek
 */
 
-function DegerlendirmeEkle(DeğerlendirmelerDizisi, isim, puan, geribildirim) {
-  let degerlendirme = {};
+function DegerlendirmeEkle(degerlendirmelerDizisi, isim, puan, geribildirim) {
+  const degerlendirme = {};
   degerlendirme.isim = isim;
   degerlendirme.puan = puan;
   degerlendirme.geribildirim = geribildirim;
-  degerlendirmeler.push(degerlendirme);
-  return degerlendirme;
+  degerlendirmelerDizisi.push(degerlendirme);
+  return degerlendirmelerDizisi;
 }
+console.log(
+  DegerlendirmeEkle(degerlendirmeler, "Hurşut", 2, "Boktan yemekler!")
+);
 //DegerlendirmeEkle(degerlendirmeler, "hurşut", 2, "Boktan yemekler!");
 //console.log(degerlendirmeler);
 /*  Görev 6: 
@@ -181,14 +185,14 @@ console.log(AnahtardanDegerlendirmeAl(degerlendirmeler, 2));
 
 function SonDegerlendirmeyiAl(degerlendirmelerDizisi) {
   let b =
-    degerlendirmeler[degerlendirmeler.length - 1].isim +
+    degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].isim +
     " isimli kişi " +
-    degerlendirmeler[degerlendirmeler.length - 1].puan +
+    degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].puan +
     " puan verdi ve şunları yazdı: " +
-    degerlendirmeler[degerlendirmeler.length - 1].geribildirim;
+    degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].geribildirim;
   return b;
 }
-console.log(SonDegerlendirmeyiAl());
+console.log(SonDegerlendirmeyiAl(degerlendirmeler));
 
 /////////////// BONUS  GÖRVLER////////////////////
 
@@ -206,13 +210,7 @@ console.log(SonDegerlendirmeyiAl());
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(degerlendirmelerDizisi, puan) {
-  for (i = 0; i < degerlendirmeler.length; i++) {
-    if (degerlendirmeler[i].puan < 4) {
-      return degerlendirmeler;
-    }
-  }
-}
+function PuanaGoreDegerlendirmeAl(degerlendirmelerDizisi, puan) {}
 console.log(PuanaGoreDegerlendirmeAl());
 /*  BONUS 2:    
 	UzunDegerlendirmeleriAl fonksiyonuna aşağıdakileri uygulayın:
