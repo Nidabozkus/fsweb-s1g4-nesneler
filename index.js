@@ -210,8 +210,16 @@ console.log(SonDegerlendirmeyiAl(degerlendirmeler));
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(degerlendirmelerDizisi, puan) {}
-console.log(PuanaGoreDegerlendirmeAl());
+function PuanaGoreDegerlendirmeAl(degerlendirmelerDizisi, puan) {
+  const puanaGoreDegerlendirme = [];
+  for (let i = 0; i < degerlendirmelerDizisi.length; i++) {
+    if (Math.floor(degerlendirmelerDizisi[i].puan) === puan) {
+      puanaGoreDegerlendirme.push(degerlendirmelerDizisi[i]);
+    }
+  }
+  return puanaGoreDegerlendirme;
+}
+console.log("bonus1: ", PuanaGoreDegerlendirmeAl(degerlendirmeler, 4));
 /*  BONUS 2:    
 	UzunDegerlendirmeleriAl fonksiyonuna aşağıdakileri uygulayın:
 	1. Tüm değerlendirmeleri içeren diziyi alacak
